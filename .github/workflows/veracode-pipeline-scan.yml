@@ -138,7 +138,6 @@ jobs:
           filter_mitigated_flaws: ${{ inputs.filter_mitigated_flaws }}
           filtered_results_file: ${{ strategy.job-index }}-filtered_results.json
 
-
       - name: Convert pipeline scan output to SARIF format
         if: ${{ inputs.create_code_scanning_alert && always() }}
         uses: Veracode/veracode-pipeline-scan-results-to-sarif@autoRewritePath
@@ -186,5 +185,3 @@ jobs:
                 -d @"payload.txt"
             fi
           done
-          
-      
