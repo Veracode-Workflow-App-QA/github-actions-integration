@@ -171,7 +171,7 @@ jobs:
           echo '${{ toJSON(needs) }}' | jq -c 'to_entries[]' | while read -r job; do
             status=$(echo "$job" | jq -r '.value.result')
             if [ "$status" = "success" ]; then
-              echo "Job scuccess no need to update"
+              echo "Job success no need to update"
               success_count=$((success_count + 1))
             elif [ "$status" = "failure" ]; then
               echo "Jobs failed - need checks update"
